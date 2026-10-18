@@ -1,6 +1,6 @@
 # Vaidehi Narvekar — Portfolio
 
-Personal portfolio website, live at **https://vaidehi42.github.io/portfolio/**
+Personal portfolio website, live at **https://vaidehi42.github.io/Portfolio/**
 
 - 🎓 B.Tech AI & Data Science @ DJSCE
 - 🏦 Featured: [Vridhi.ai](https://vridhiai-dyj2nqik.manus.space/) — explainable credit-risk analytics for Indian MSMEs
