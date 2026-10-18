@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="width=device-width, initial-scale=1.0"/>
+<title>Vaidehi Narvekar — AI & Data Science Portfolio</title>
+<meta name="description" content="Portfolio of Vaidehi Narvekar — B.Tech AI & Data Science student at DJSCE. Machine learning, data analysis, and web development projects."/>
+<style>
+  :root{
+    --midnight:#10070C; --wine:#190B12; --burgundy:#451126; --accent:#701A3D;
+    --rose:#C77B9B; --pale:#E5B5C7; --ivory:#F8F0F3; --muted:#80586B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--midnight);color:var(--ivory);font-family:'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.7}
+  a{color:var(--rose);text-decoration:none}
+  a:hover{color:var(--pale)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem}
+
+  header{position:fixed;inset:0 0 auto 0;z-index:10;background:rgba(16,7,12,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(199,123,155,.15)}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.5rem;max-width:1000px;margin:0 auto}
+  .brand{font-weight:700;letter-spacing:2px;color:var(--ivory)}
+  .brand span{color:var(--rose)}
+  nav ul{display:flex;gap:1.6rem;list-style:none;font-size:.92rem}
+  @media(max-width:640px){nav ul{gap:1rem;font-size:.85rem}}
+
+  .hero{min-height:96vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding-top:4rem}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(600px 300px at 80% 10%,rgba(112,26,61,.35),transparent 70%),
+    radial-gradient(500px 350px at 5% 95%,rgba(69,17,38,.5),transparent 70%)}
+  .hero::after{content:"";position:absolute;inset:0;background-image:
+    linear-gradient(rgba(248,240,243,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(248,240,243,.03) 1px,transparent 1px);
+    background-size:42px 42px}
+  .hero .wrap{position:relative;z-index:1}
+  .kicker{color:var(--rose);font-family:Consolas,'Courier New',monospace;letter-spacing:3px;font-size:.9rem}
+  h1{font-size:clamp(2.4rem,7vw,4.2rem);letter-spacing:1px;margin:.4rem 0}
+  h1 .grad{background:linear-gradient(90deg,var(--rose),var(--pale),var(--rose));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite}
+  @keyframes shimmer{to{background-position:200% 0}}
+  .role{color:var(--pale);font-size:1.15rem;font-weight:600}
+  .role em{color:var(--rose);font-style:normal}
+  .underline{width:210px;height:3.5px;border-radius:2px;margin:1.2rem 0 1.6rem;
+    background:linear-gradient(90deg,transparent,var(--rose),transparent);box-shadow:0 0 18px rgba(199,123,155,.55);animation:pulseW 5s ease-in-out infinite}
+  @keyframes pulseW{50%{width:260px}}
+  .hero p.lead{max-width:600px;color:#d9c3cd}
+  .cta{display:inline-flex;gap:1rem;margin-top:1.8rem;flex-wrap:wrap}
+  .btn{padding:.75rem 1.6rem;border-radius:999px;font-weight:600;font-size:.95rem;transition:.25s}
+  .btn.primary{background:var(--accent);color:var(--ivory);border:1px solid var(--rose)}
+  .btn.primary:hover{background:var(--burgundy);box-shadow:0 0 24px rgba(112,26,61,.6)}
+  .btn.ghost{border:1px solid rgba(199,123,155,.4);color:var(--pale)}
+  .btn.ghost:hover{border-color:var(--rose);color:var(--ivory)}
+  .orb{position:absolute;border:1px solid rgba(199,123,155,.25);border-radius:50%;animation:spin 36s linear infinite}
+  .orb.o1{width:340px;height:340px;top:-80px;right:-100px}
+  .orb.o2{width:200px;height:200px;top:40px;right:20px;animation-duration:24s;animation-direction:reverse;border-color:rgba(199,123,155,.35)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media(max-width:640px){.orb{display:none}}
+
+  section{padding:4.5rem 0;border-top:1px solid rgba(199,123,155,.09)}
+  h2{font-size:1.8rem;margin-bottom:.5rem;letter-spacing:.5px}
+  h2 .hash{color:var(--rose);font-family:Consolas,monospace;font-weight:400}
+  .sub{color:var(--muted);font-size:.95rem;margin-bottom:2rem}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+  .card{background:linear-gradient(160deg,var(--wine),var(--midnight));border:1px solid rgba(199,123,155,.18);border-radius:14px;padding:1.4rem;transition:.25s;position:relative;overflow:hidden}
+  .card:hover{border-color:var(--rose);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.45)}
+  .card h3{font-size:1.05rem;margin-bottom:.5rem}
+  .card .meta{color:var(--rose);font-size:.8rem;letter-spacing:1px;margin-bottom:.7rem}
+  .card p{color:#d9c3cd;font-size:.92rem}
+  .card .links{margin-top:.9rem;font-size:.88rem;display:flex;gap:1rem;flex-wrap:wrap}
+  .chip{background:var(--burgundy);color:var(--pale);font-size:.72rem;padding:.15rem .55rem;border-radius:999px;letter-spacing:.5px}
+
+  .ach{width:100%;border-collapse:collapse;font-size:.93rem}
+  .ach td{padding:.8rem .7rem;border-bottom:1px solid rgba(199,123,155,.12);vertical-align:top}
+  .ach td:first-child{color:var(--pale);font-weight:600;width:46%}
+  @media(max-width:560px){.ach,.ach tr,.ach td{display:block;width:100%}.ach td:first-child{width:auto;border-bottom:none}}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+  .skills h3{color:var(--rose);font-size:.85rem;letter-spacing:2px;margin-bottom:.6rem}
+  .skills .line{color:#d9c3cd;font-size:.95rem}
+
+  footer{padding:2.5rem 0;text-align:center;color:var(--muted);font-size:.85rem}
+  footer .top{width:200px;height:1.5px;margin:0 auto 1.2rem;background:linear-gradient(90deg,transparent,var(--rose),transparent)}
+</style>
+</head>
+<body>
+
+<header><nav>
+  <div class="brand">VAIDEHI<span>.dev</span></div>
+  <ul>
+    <li><a href="#work">Projects</a></li>
+    <li><a href="#wins">Achievements</a></li>
+    <li><a href="#stack">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav></header>
+
+<div class="hero">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap">
+    <div class="kicker">~/vaidehi-narvekar</div>
+    <h1 class="grad">VAIDEHI NARVEKAR</h1>
+    <div class="role">AI &amp; Data Science · <em>B.Tech @ DJSCE</em></div>
+    <div class="underline"></div>
+    <p class="lead">Machine Learning · Data Analysis · Web Development. Second-year student who likes projects where the challenge is real — from layoff-risk prediction to usable tech for people with colour-vision deficiency.</p>
+    <div class="cta">
+      <a class="btn ghost" href="https://github.com/Vaidehi42" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/vaidehi-narvekar-62a452387/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn primary" href="https://vridhiai-dyj2nqik.manus.space/" target="_blank" rel="noopener">Try Vridhi AI ↗</a>
+    </div>
+  </div>
+</div>
+
+<section id="work"><div class="wrap">
+  <h2><span class="hash">#</span> Featured Work</h2>
+  <p class="sub">Real projects, real datasets, verified links.</p>
+  <div class="cards">
+    <div class="card">
+      <span class="chip">Featured</span>
+      <h3>Vridhi.ai — Explainable Credit-Risk Analytics</h3>
+      <div class="meta">REACT 18 · VITE · TAILWIND · RECHARTS · FASTAPI</div>
+      <p>Credit-risk analytics platform for Indian MSMEs with no CIBIL history, keeping every risk factor explainable. Selected in the PPT rounds of CodeSlayer 2K26 (NIT Delhi) and HackConquest (TCET Mumbai).</p>
+      <div class="links"><a href="https://vridhiai-dyj2nqik.manus.space/" target="_blank" rel="noopener">⟶ Live demo</a><a href="https://github.com/Vaidehi42/Vridhi-ai" target="_blank" rel="noopener">⟶ Repository</a></div>
+    </div>
+    <div class="card">
+      <h3>Job Layoff Risk Prediction</h3>
+      <div class="meta">PYTHON · PANDAS · NUMPY</div>
+      <p>Trained and compared Logistic Regression, Decision Tree and Random Forest on the "AI Impact on Jobs and Layoff Risk" dataset (Kaggle) to predict automation and layoff risk.</p>
+    </div>
+    <div class="card">
+      <h3>TikTok Video Dataset — EDA</h3>
+      <div class="meta">PYTHON · PANDAS</div>
+      <p>Cleaned and de-duplicated a raw video dataset, engineered Total Engagement and Engagement Rate features from view/like/share/comment counts, and exported the enriched dataset.</p>
+    </div>
+    <div class="card">
+      <h3>AdaptiveVision — Colour-Vision-Deficiency Correction</h3>
+      <div class="meta">RESEARCH · GROUP PROJECT (IPD)</div>
+      <p>Researched real-time colour-correction technology — colour spaces, daltonization, YOLO — and reviewed 2022–2026 papers, documenting findings, limitations and open research gaps.</p>
+    </div>
+    <div class="card">
+      <h3>OnlyPipe — Sign-Up Page UI</h3>
+      <div class="meta">HTML · CSS</div>
+      <p>Responsive dark-themed sign-up page with a step-progress tracker, social login options, and full form validation.</p>
+    </div>
+    <div class="card">
+      <h3>Zerodha Landing Page (Clone)</h3>
+      <div class="meta">HTML · CSS</div>
+      <p>Rebuilt Zerodha's landing page — navbar, hero, feature highlights and CTAs — to sharpen responsive-layout fundamentals.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="wins"><div class="wrap">
+  <h2><span class="hash">#</span> Hackathons &amp; Achievements</h2>
+  <p class="sub">All entries verified — no padding.</p>
+  <table class="ach">
+    <tr><td>CodeSlayer 2K26 — NIT Delhi (national)</td><td>Selected, PPT round · Vridhi.ai</td></tr>
+    <tr><td>HackConquest — TCET Mumbai</td><td>Selected, PPT round · Vridhi.ai</td></tr>
+    <tr><td>Smart India Hackathon 2026 (internal, DJSCE)</td><td>Selected, PPT round · Swasthya-Setu (NAMASTE / ICD-11)</td></tr>
+    <tr><td>Binary Battle ML — Kaggle churn challenge</td><td>Leaderboard rank 24 · score 0.88675 · LightGBM + XGBoost + CatBoost on 165K records</td></tr>
+    <tr><td>ZeroCode — Techfest, IIT Bombay</td><td>Prompt-engineering competition participant</td></tr>
+    <tr><td>MHT-CET 2025</td><td>97.9 percentile · state rank 7316</td></tr>
+    <tr><td>JEE Main 2025</td><td>83.1 percentile · General rank 249351</td></tr>
+  </table>
+</div></section>
+
+<section id="stack"><div class="wrap">
+  <h2><span class="hash">#</span> Skills</h2>
+  <p class="sub"> Technologies I use, grouped.</p>
+  <div class="skills">
+    <div><h3>LANGUAGES</h3><div class="line">Python · Java · C · JavaScript · HTML · CSS</div></div>
+    <div><h3>DATA / ML</h3><div class="line">Pandas · NumPy · Scikit-learn · LightGBM · XGBoost · CatBoost · Matplotlib · Seaborn</div></div>
+    <div><h3>WEB</h3><div class="line">React · HTML · CSS · JavaScript</div></div>
+    <div><h3>TOOLS</h3><div class="line">Git/GitHub · Excel</div></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2><span class="hash">#</span> Contact</h2>
+  <p class="sub">Open to internships, hackathons and ML collaborations.</p>
+  <div class="cta">
+    <a class="btn primary" href="mailto:vaidehinar42@gmail.com">✉ Email me</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/vaidehi-narvekar-62a452387/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="https://github.com/Vaidehi42" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+
+<footer>
+  <div class="top"></div>
+  VAIDEHI NARVEKAR · create with intention · Virar, Maharashtra
+</footer>
+
+</body>
+</html>
